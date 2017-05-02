@@ -224,13 +224,13 @@ mv %{buildroot}/usr/lib64/*so*  %{buildroot}/usr/lib64/haswell/
 %exclude /usr/lib64/haswell/libgcc_s.so.1
 /usr/lib64/haswell/libgfortran.so.3
 /usr/lib64/haswell/libgfortran.so.3.0.0
-/usr/lib64/haswell/libgomp.so.1
-/usr/lib64/haswell/libgomp.so.1.0.0
+%exclude /usr/lib64/haswell/libgomp.so.1
+%exclude /usr/lib64/haswell/libgomp.so.1.0.0
 %exclude /usr/lib64/haswell/libmpx.so.2
 %exclude /usr/lib64/haswell/libmpx.so.2.0.0
 %exclude /usr/lib64/haswell/libmpxwrappers.so.2
 %exclude /usr/lib64/haswell/libmpxwrappers.so.2.0.0
-/usr/lib64/haswell/libquadmath.so.0
-/usr/lib64/haswell/libquadmath.so.0.0.0
+%exclude /usr/lib64/haswell/libquadmath.so.0
+%exclude /usr/lib64/haswell/libquadmath.so.0.0.0
 %exclude /usr/lib64/haswell/libssp.so.0
 %exclude /usr/lib64/haswell/libssp.so.0.0.0
