@@ -12,7 +12,7 @@
 
 Name     : libgfortran-compat-soname3
 Version  : 6.3.0
-Release  : 8
+Release  : 9
 URL      : http://www.gnu.org/software/gcc/
 Source0  : http://ftp.gnu.org/gnu/gcc/gcc-6.3.0/gcc-6.3.0.tar.bz2
 Source1  : ftp://gcc.gnu.org/pub/gcc/infrastructure/isl-%{isl_version}.tar.bz2
@@ -153,8 +153,8 @@ mkdir ../gcc-build
 pushd ../gcc-build
 unset CFLAGS
 unset CXXFLAGS
-export CFLAGS="-march=ivybridge -g -O3 -fstack-protector -Wl,-z -Wl,now -Wl,-z -Wl,relro  -Wl,-z,max-page-size=0x1000"
-export CXXFLAGS="-march=ivybridge -g -O3  -Wl,-z,max-page-size=0x1000"
+export CFLAGS="-g -O3 -fstack-protector -Wl,-z -Wl,now -Wl,-z -Wl,relro  -Wl,-z,max-page-size=0x1000"
+export CXXFLAGS="-g -O3  -Wl,-z,max-page-size=0x1000"
 export CFLAGS_FOR_TARGET="$CFLAGS"
 
 export CPATH=/usr/include
@@ -191,7 +191,7 @@ export LIBRARY_PATH=%{_libdir}
     --with-system-libunwind \
     --with-gnu-ld \
     --with-tune=haswell \
-    --with-arch=ivybridge \
+    --with-arch=westmere \
     --disable-bootstrap \
     --enable-libmpx
 
@@ -213,24 +213,22 @@ rm -rf %{buildroot}/usr/lib64/gcc/
 rm -rf %{buildroot}/usr/lib64/*.a
 rm -rf %{buildroot}/usr/lib64/*.so
 rm -rf %{buildroot}/usr/lib64/*.spec
-mkdir -p %{buildroot}/usr/lib64/haswell
-mv %{buildroot}/usr/lib64/*so*  %{buildroot}/usr/lib64/haswell/
 
 %files
-%exclude /usr/lib64/haswell/libatomic.so.1
-%exclude /usr/lib64/haswell/libatomic.so.1.2.0
-%exclude /usr/lib64/haswell/libcc1.so.0
-%exclude /usr/lib64/haswell/libcc1.so.0.0.0
-%exclude /usr/lib64/haswell/libgcc_s.so.1
-/usr/lib64/haswell/libgfortran.so.3
-/usr/lib64/haswell/libgfortran.so.3.0.0
-%exclude /usr/lib64/haswell/libgomp.so.1
-%exclude /usr/lib64/haswell/libgomp.so.1.0.0
-%exclude /usr/lib64/haswell/libmpx.so.2
-%exclude /usr/lib64/haswell/libmpx.so.2.0.0
-%exclude /usr/lib64/haswell/libmpxwrappers.so.2
-%exclude /usr/lib64/haswell/libmpxwrappers.so.2.0.0
-%exclude /usr/lib64/haswell/libquadmath.so.0
-%exclude /usr/lib64/haswell/libquadmath.so.0.0.0
-%exclude /usr/lib64/haswell/libssp.so.0
-%exclude /usr/lib64/haswell/libssp.so.0.0.0
+%exclude /usr/lib64/libatomic.so.1
+%exclude /usr/lib64/libatomic.so.1.2.0
+%exclude /usr/lib64/libcc1.so.0
+%exclude /usr/lib64/libcc1.so.0.0.0
+%exclude /usr/lib64/libgcc_s.so.1
+/usr/lib64/libgfortran.so.3
+/usr/lib64/libgfortran.so.3.0.0
+%exclude /usr/lib64/libgomp.so.1
+%exclude /usr/lib64/libgomp.so.1.0.0
+%exclude /usr/lib64/libmpx.so.2
+%exclude /usr/lib64/libmpx.so.2.0.0
+%exclude /usr/lib64/libmpxwrappers.so.2
+%exclude /usr/lib64/libmpxwrappers.so.2.0.0
+%exclude /usr/lib64/libquadmath.so.0
+%exclude /usr/lib64/libquadmath.so.0.0.0
+%exclude /usr/lib64/libssp.so.0
+%exclude /usr/lib64/libssp.so.0.0.0
