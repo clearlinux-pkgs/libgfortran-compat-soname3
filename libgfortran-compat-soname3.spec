@@ -2,6 +2,7 @@
 %define gcc_target %{_arch}-generic-linux
 %define libstdcxx_maj 6
 %define libstdcxx_full 6.0.21
+# Please update Source1 when updating isl_version
 %define isl_version 0.14
 
 %define debug_package %{nil}
@@ -12,10 +13,10 @@
 
 Name     : libgfortran-compat-soname3
 Version  : 6.3.0
-Release  : 13
+Release  : 14
 URL      : http://www.gnu.org/software/gcc/
 Source0  : http://ftp.gnu.org/gnu/gcc/gcc-6.3.0/gcc-6.3.0.tar.bz2
-Source1  : ftp://gcc.gnu.org/pub/gcc/infrastructure/isl-%{isl_version}.tar.bz2
+Source1  : https://gcc.gnu.org/pub/gcc/infrastructure/isl-0.14.tar.bz2
 Summary  : AVX optinuzed libgfortran
 Group    : Development/Tools
 License  : BSD-3-Clause BSL-1.0 GFDL-1.2 GFDL-1.3 GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT
