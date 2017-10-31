@@ -22,6 +22,7 @@ License  : BSD-3-Clause BSL-1.0 GFDL-1.2 GFDL-1.3 GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-
 Patch0   : 0001-Fix-stack-protection-issues.patch
 Patch2   : openmp-vectorize.patch
 Patch3	 : compilebork.patch
+Patch4   : use-ucontext_t-not-struct-ucontext-in-linux-unwind.h.patch
 
 BuildRequires : bison
 BuildRequires : flex
@@ -144,6 +145,7 @@ GNU cc and gcc C compilers.
 %patch0 -p1
 %patch2 -p1
 %patch3 -p1 
+%patch4 -p1 
 
 %build
 
